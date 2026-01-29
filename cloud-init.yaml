@@ -1,0 +1,36 @@
+#cloud-config
+
+hostname: node_name
+timezone: Europe/Paris
+
+users:
+  - name: admin
+    groups: sudo
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: false
+    passwd: hashpassword
+    ssh_authorized_keys:
+      - sshkey
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - qemu-guest-agent
+  - ansible
+  - sudo
+  - curl
+  - vim
+
+runcmd:
+  - systemctl enable qemu-guest-agent
+  - systemctl start qemu-guest-agent
+  - echo "Cloud-init terminé avec succès"
+
+final_message: |
+  ✅ Cloud-init terminé
+  - Utilisateur admin créé
+  - qemu-guest-agent actif
+  - Ansible installé
+
