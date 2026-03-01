@@ -6,6 +6,7 @@ Astra-One Cloud - Cloud-Init
 <p><img title="logo" src="assets/logo.png" width="320" height="320"></p>
 
 </div>
+
 ## Introduction
 
 > [!WARNING]  
