@@ -5,7 +5,7 @@ timezone: Europe/Paris
 
 users:
   - name: admin
-    groups: sudo
+    groups: wheel
     shell: /bin/bash
     sudo: ALL=(ALL) NOPASSWD:ALL
     lock_passwd: false
